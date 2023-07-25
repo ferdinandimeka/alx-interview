@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 
 '''
-create a list of lists of integers representing
-the pascal triangle of a given integer
+A pascal triangle module
 '''
 
 def pascal_triangle(n):
     if n <= 0:
         return []
+    
+    '''
+    create a list of lists of integers representing
+    the pascal triangle of a given integer
+    '''
     
     triangle = [[1]]
     while len(triangle) < n:
