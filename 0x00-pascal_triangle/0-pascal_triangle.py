@@ -5,7 +5,7 @@ A pascal triangle module
 '''
 
 def pascal_triangle(n):
-    if n <= 0:
+    if n <= 0 or type(n) is not int:
         return []
     
     '''
