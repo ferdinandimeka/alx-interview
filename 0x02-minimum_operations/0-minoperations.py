@@ -10,8 +10,8 @@ def minOperations(n: int) -> int:
         calculates the fewest number of operations
     """
     if n == 1:
-        return 0 # base case: already have 1 H
-    
+        return 0  # base case: already have 1 H
+
     operations = 0
     divisor = 2
 
