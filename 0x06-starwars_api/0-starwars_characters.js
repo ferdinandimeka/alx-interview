@@ -21,7 +21,7 @@ if (process.argv.length > 2) {
         });
 
         Promise.all(characterName)
-        .then(names => console.log(names.join('\n')))
-        .catch(err => console.log(err))
+            .then(names => console.log(names.join('\n')))
+            .catch(err => console.log(err))
     });
 }
