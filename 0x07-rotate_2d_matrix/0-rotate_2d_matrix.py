@@ -16,14 +16,18 @@ def rotate_2d_matrix(matrix):
         return
 
     # Transpose the matrix (swap rows with columns)
-    for i in range(num_rows):
-        for j in range(i, num_rows):
-            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-
-    # Reverse each row to complete the 90-degree clockwise rotation
-    for row in range(num_rows):
-        matrix[row].reverse()
-
-    # print rotated matrix
-    for row in matrix:
-        return row
+    rows = len(matrix)
+    cols = len(matrix[0])
+    if not all(map(lambda x: len(x) == cols, matrix)):
+        return
+    c, r = 0, rows - 1
+    for i in range(cols * rows):
+        if i % rows == 0:
+            matrix.append([])
+        if r == -1:
+            r = rows - 1
+            c += 1
+        matrix[-1].append(matrix[r][c])
+        if c == cols - 1 and r >= -1:
+            matrix.pop(r)
+        r -= 1
